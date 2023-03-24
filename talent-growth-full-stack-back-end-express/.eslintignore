@@ -1,0 +1,5 @@
+# Custom Ignored Files
+/app.js
+/bin/www
+/routes/index.js
+/routes/users.js
