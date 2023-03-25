@@ -45,3 +45,9 @@ npm install
 npm install
 npm run start-dev
 ```
+
+## References
+
+- [Next](https://nextjs.org/docs)
+- [Express](https://expressjs.com/)
+- [Front End Design](https://startbootstrap.com/template/business-frontpage)
