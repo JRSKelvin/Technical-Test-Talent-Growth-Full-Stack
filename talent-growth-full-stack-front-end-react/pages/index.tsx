@@ -6,9 +6,16 @@ import { Image } from 'react-bootstrap'
 import Swal from 'sweetalert2'
 
 function IndexPage() {
+  const [loggedIn, setLoggedIn] = React.useState(false)
   const [arrayAmongUs, setArrayAmongUs] = React.useState([1, 0, 0, 0, 0, 0, 0])
   const [alertCrewmate, setAlertCrewmate] = React.useState('')
   const router = useRouter()
+
+  React.useEffect(() => {
+    if (Cookies.get('accessToken')) {
+      setLoggedIn(true)
+    }
+  }, [])
 
   function requestLogout() {
     Swal.fire({
@@ -70,7 +77,7 @@ function IndexPage() {
               <li className="nav-item">
                 <a className="nav-link">Contact</a>
               </li>
-              {Cookies.get('accessToken') ? (
+              {loggedIn ? (
                 <React.Fragment>
                   <li className="nav-item">
                     <a className="nav-link">Welcome Back ({Cookies.get('accessToken')})</a>
